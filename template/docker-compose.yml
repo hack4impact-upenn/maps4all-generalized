@@ -1,0 +1,5 @@
+web:
+  build: .
+  env_file: .env
+  ports:
+    - "${EXTERNAL_PORT}:5000"
