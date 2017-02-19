@@ -4,8 +4,8 @@ RUN apt-get update -y
 RUN apt-get install -y python3-pip python3-dev rubygems build-essential postgresql
 RUN apt-get install -y git
 RUN gem install sass
-RUN git clone https://github.com/hack4impact/flask-base.git /m4a
-WORKDIR /m4a
+RUN git clone https://github.com/hack4impact/flask-base.git /app
+WORKDIR /app
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 RUN python3 manage.py recreate_db
