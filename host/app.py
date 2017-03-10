@@ -23,9 +23,10 @@ def create():
     ORG_NAME = request.form['org']
     PORT = str(next_port())
     APP_NAME = ORG_NAME.replace(" ", "-") + "_p" + PORT
+    SECRET = "supersecretkeyshhhh"
 
     subprocess.Popen(["sh", "host/scripts/new_instance.sh", APP_NAME, ORG_NAME,
-                      PORT], cwd="../")
+                      PORT, SECRET], cwd="../")
 
     return render_template('success.html', port=PORT, org=ORG_NAME)
 

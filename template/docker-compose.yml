@@ -16,6 +16,11 @@ services:
     depends_on:
       - db
       - redis
+    environment:
+      - DATABASE_URL=postgres://postgres@db/postgres
+      - FLASK_CONFIG=production
+      - REDISTOGO_URL=redis://redis:6379
+      - DATABASE_HOST=db
 
 
   db:
